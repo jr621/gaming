@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>gamez</title>
+</head>
+<body>
+	<center><canvas id="canvas" width="1300px" height="635px" style="background-color: black;"></canvas></center>
+  <script type="text/javascript">
+    //Create the Canvas
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+    function createCircle() {
+    	return {
+    		x: 100,
+    		y: 200,
+    		size: 50,
+    		color: "red"
+    	}
+    }
+    var circle = createCircle();
+ 
+  	function draw() {
+          context.beginPath();
+          context.arc(
+              circle.x,
+              circle.y,
+              circle.size,
+              0,
+              2*Math.PI
+              );
+         context.fillStyle = circle.color;
+         context.fill();
+         context.stroke();
+    }
+    draw();
+    createCircle();
+		
+	</script>
+</body>
+</html>
